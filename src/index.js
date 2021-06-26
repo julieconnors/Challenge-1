@@ -1,21 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ScotchInfoBar from './ScotchInfoBar';
-import './styles.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import ScotchInfoBar from "./ScotchInfoBar";
+import "./styles.css";
 
 /**
  * Our data
  * ------------------------
  */
 const user = {
-  name: 'Chris on Code',
-  location: 'Las Vegas',
-  foodType: 'Everything',
+  name: "Chris on Code",
+  location: "Las Vegas",
+  foodType: "Everything",
   age: 28,
-  likes: 'Coding into the wee hours of the morning',
-  twitterUsername: 'chrisoncode',
+  likes: "Coding into the wee hours of the morning",
+  twitterUsername: "chrisoncode",
   avatar:
-    'https://scotch-res.cloudinary.com/image/upload/v1556479698/xRZsnhr0_400x400_cpyg2t.png'
+    "https://scotch-res.cloudinary.com/image/upload/v1556479698/xRZsnhr0_400x400_cpyg2t.png"
 };
 
 /**
@@ -25,13 +25,27 @@ const user = {
 function App() {
   return (
     <div className="App">
-      {/* Show user data here */}
-      <div className="user-deets">display user info here. happy coding!</div>
+      <div className="user-deets">
+        <img src={user.avatar} alt="user-avatar" />
+        <h3>
+          <a>{user.name}</a>
+        </h3>
+        <strong>Location</strong>
+        <p>{user.location}</p>
+        <strong>Eats</strong>
+        <p>{user.foodType}</p>
+        <strong>Age</strong>
+        <p>{user.age}</p>
+        <strong>Likes</strong>
+        <p>{user.likes}</p>
+        <strong>Twitter</strong>
+        <a href="">@{user.twitterUsername}</a>
+      </div>
 
       <ScotchInfoBar />
     </div>
   );
 }
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);

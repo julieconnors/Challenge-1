@@ -23,12 +23,13 @@ const user = {
  * ------------------------
  */
 function App() {
+  const url = `https://twitter.com/${user.twitterUsername}`;
   return (
     <div className="App">
       <div className="user-deets">
         <img src={user.avatar} alt="user-avatar" />
         <h3>
-          <a>{user.name}</a>
+          <a href={url}>{user.name}</a>
         </h3>
         <strong>Location</strong>
         <p>{user.location}</p>
@@ -39,7 +40,7 @@ function App() {
         <strong>Likes</strong>
         <p>{user.likes}</p>
         <strong>Twitter</strong>
-        <a href="">@{user.twitterUsername}</a>
+        <a href={url}>@{user.twitterUsername}</a>
       </div>
 
       <ScotchInfoBar />
